@@ -1,0 +1,32 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non-null
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 600427
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 10
+      idle-timeout: 28800
+      validation-timeout: 3000
+      max-lifetime: 60000
+      connection-test-query: 'SELECT 1'
+
+server:
+  servlet:
+    context-path: /
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+  # ssl:
+  #   key-store: 1865442_isxcxbackend1.cn.pfx
+  #   key-store-password: bQLlAWvh
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.icestream.zhongjiao.entity
